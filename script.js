@@ -18,10 +18,10 @@ const obj = [{
             }
             ];
 
-const cardSection = document.querySelector('.cardSection');
 let number = 0;
-
+            
 let displayCard = () => {
+    const cardSection = document.querySelector('.cardSection');
     cardSection.innerHTML = `
                             <img src="images/${obj[number].img}" alt="person">
                             <h4>${obj[number].name}</h4>
@@ -39,16 +39,12 @@ let displayCard = () => {
     document.querySelector('#randomObj').addEventListener('click', randomCard);
 }
 
-displayCard();
-
-
 function nextCard() {
     number++;
     if (number >= obj.length) {
         number = 0;
     }
     displayCard();
-    console.log(number);
 }
 
 function prevCard() {
@@ -57,108 +53,30 @@ function prevCard() {
         number = obj.length - 1;
     }
     displayCard();
-    console.log(number)
 }
 
 function randomCard() {
     let randomNum = Math.floor(Math.random() * 3);
     number = randomNum;
     displayCard();
-    console.log(number);
 }
 
+document.addEventListener('DOMContentLoaded', function() {
+    const initialNum = 0;
+    const wholeContent = document.querySelector('.content');
+           wholeContent.innerHTML = `<h1>Our Reviews</h1>
+                                     <div class="cardSection">
+                                         <img src="images/${obj[initialNum].img}" alt="person">
+                                         <h5>${obj[initialNum].name}</h5>
+                                         <h6>${obj[initialNum].job}</h6>
+                                         <p>${obj[initialNum].paragh}</p>
+                                         <div class="btnTags">
+                                             <button id="leftBtn">prev</button>
+                                             <button id="rightBtn">next</button>
+                                         </div>
+                                         <button id="random">Surprise Me</button>
+                                 </div>`;
+    displayCard();
+})
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// THE LAST STEP : Random card
-
-// function showRandom() {
-//     let randomNum = Math.floor(Math.random() * obj.length);
-
-//         cardContent.innerHTML = `
-//                                 <img src="images/${obj[randomNum].img}" alt="person">
-//                                 <h4>${obj[randomNum].name}</h4>
-//                                 <h5>${obj[randomNum].job}</h5>
-//                                 <p>${obj[randomNum].paragh}</p>
-//                                 <div class="btnTags">
-//                                     <button id="leftBtn">prev</button>
-//                                     <button id="rightBtn">next</button>
-//                                 </div>
-//                                 <button id="randomObj">Surprise Me</button>
-//         `
-
-//     document.getElementById('randomObj').addEventListener('click', showRandom)
-//     console.log(randomNum);
-// }
-
-// document.getElementById('randomObj').addEventListener('click', showRandom);
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// const wholeContent = document.querySelector('.content');
-
-// document.addEventListener('DOMContentLoaded', function() {
-//           wholeContent.innerHTML = `<h1>Our Reviews</h1>
-//                                     <div class="cardSection">
-//                                         <img src="images/fffff.jpeg" alt="person">
-//                                         <h5>Susan Smith</h5>
-//                                         <h6>WEB DEVELOPER</h6>
-//                                         <p>I'm baby meggings twee health goth + 1. Bicycle rights tumeric chartreuse
-//                                             before they sold out charmbray pop-up. Shaman humblebrag pickled
-//                                             coloring book salvia hoodie, cold-pressed four dollar toast everyday carry
-//                                         </p>
-//                                         <div class="btnTags">
-//                                             <button id="leftBtn">prev</button>
-//                                             <button id="rightBtn">next</button>
-//                                         </div>
-//                                         <button>Surprise Me</button>
-//                                 </div>`;
-// })
