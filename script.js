@@ -36,6 +36,7 @@ let displayCard = () => {
 
     document.querySelector('#rightBtn').addEventListener('click', nextCard);
     document.querySelector('#leftBtn').addEventListener('click', prevCard);
+    document.querySelector('#randomObj').addEventListener('click', randomCard);
 }
 
 displayCard();
@@ -59,6 +60,12 @@ function prevCard() {
     console.log(number)
 }
 
+function randomCard() {
+    let randomNum = Math.floor(Math.random() * 3);
+    number = randomNum;
+    displayCard();
+    console.log(number);
+}
 
 
 
