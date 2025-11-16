@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="keywords" content="HTML CSS JAVASCRIPT">
+    <title>Review carousel</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+        * {
+            font-family: 'Open Sans';
+            padding: 0;
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-color: rgb(237, 237, 228);
+        }
+        div.content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            width: 100vw; 
+        }
+        h1 {
+            padding-bottom: 6px;
+            border-bottom: 4px solid;
+            border-image: linear-gradient(45deg, rgb(242, 255, 0), blue);
+            border-image-slice: 1;
+        }
+        div.cardSection {
+            padding: 40px;
+            background-color: white;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 4px;
+            width: 700px;
+            margin: 50px;
+            border-radius: 2%;
+            box-shadow: 3px 3px 7px rgb(32, 31, 31);
+        }
+        div.cardSection img{
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+        }
+        div.cardSection p {
+            text-align: center;
+        }
+        div.cardSection h4{
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+        div.cardSection h5 {
+            color: gray;
+        }
+        div.btnTags{
+            margin-top: 10px;
+            margin-bottom: 4px;
+        }
+        div.btnTags > button#leftBtn , button#rightBtn{
+            margin: 2px;
+            width: 50px;
+            padding: 4px;
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            border-image: linear-gradient(45deg, rgb(242, 255, 0), blue);
+            border-image-slice: 1;
+        }
+        button#randomObj {
+            width: 120px;
+            border: 3px solid;
+            border-radius: 8px;
+            border-image: linear-gradient(45deg,rgb(242, 255, 0),blue) 2;
+            padding: 8px;
+            font-weight: bold;
+        }
+        
+    </style>
+
+</head>
+<body>
+    <div class="content">
+        <h1>Our Reviews</h1>
+        <div class="cardSection">
+            <img src="images/ffff.jpeg" alt="person">
+            <h4>Susan Smith</h4>
+            <h5>WEB DEVELOPER</h5>
+            <p>I'm baby meggings twee health goth + 1. Bicycle rights tumeric chartreuse
+                before they sold out charmbray pop-up. Shaman humblebrag pickled
+                coloring book salvia hoodie, cold-pressed four dollar toast everyday carry
+            </p>
+            <div class="btnTags">
+                <button id="leftBtn">prev</button>
+                <button id="rightBtn">next</button>
+            </div>
+            <button id="randomObj">Surprise Me</button> 
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
