@@ -35,6 +35,7 @@ let displayCard = () => {
     `
 
     document.querySelector('#rightBtn').addEventListener('click', nextCard);
+    document.querySelector('#leftBtn').addEventListener('click', prevCard);
 }
 
 displayCard();
@@ -44,9 +45,18 @@ function nextCard() {
     number++;
     if (number >= obj.length) {
         number = 0;
-        displayCard();
-        console.log(number);
     }
+    displayCard();
+    console.log(number);
+}
+
+function prevCard() {
+    number--;
+    if (number < 0) {
+        number = obj.length - 1;
+    }
+    displayCard();
+    console.log(number)
 }
 
 
